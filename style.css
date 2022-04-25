@@ -1,0 +1,246 @@
+/* card */
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.card {
+  cursor: cell;
+  background: grey;
+  margin: 1.5rem;
+  color: white;
+  background-size: cover;
+  padding: 10rem 0 0;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  width: 33.1ch;
+  height: 25ch;
+  transition: transform 500ms ease;
+}
+.card:hover,
+.card:focus-within {
+  transform: scale(1.1);
+}
+.card-content {
+  --padding: 1.5rem;
+  padding: var(--padding);
+  background: linear-gradient(
+    hsl(0 0% 0% / 0),
+    hsl(0 0% 0% / 0.3) 20%,
+    hsl(0 0% 0% / 1)
+  );
+}
+@media (hover) {
+  .card-content {
+    transform: translateY(56%);
+    transition: transform 500ms ease;
+    transition-delay: 500ms;
+  }
+  .card:hover .card-content,
+  .card:focus-within .card-content {
+    transform: translateY(0);
+    transition-delay: 500ms;
+  }
+  .card:focus-within .card-content {
+    transition-duration: 0ms;
+  }
+  .card-content > *:not(.card-title) {
+    opacity: 0;
+    transition: opacity 500ms linear;
+  }
+  .card:hover .card-content > *:not(.card-title),
+  .card:focus-within .card-content > *:not(.card-title) {
+    opacity: 1;
+    transition-delay: 500ms;
+  }
+  .card:hover .card-title::after,
+  .card:focus-within .card-title::after {
+    transform: scaleX(1);
+  }
+}
+
+.card-title {
+  position: relative;
+  width: max-content;
+  font-family: "Roboto", sans-serif;
+}
+.card-title::after {
+  content: "";
+  position: absolute;
+  height: 4px;
+  background: rgb(157, 255, 157);
+  width: calc(100% + var(--padding));
+  left: calc(var(--padding) * -1);
+  bottom: -20%;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 500ms ease;
+}
+
+.button {
+  cursor: pointer;
+  display: inline;
+  text-decoration: none;
+  color: black;
+  background-color: rgb(157, 255, 157);
+  padding: 0.5em 1.25em;
+  border-radius: 0.25em;
+}
+.button:hover,
+.button:focus {
+  background-color: white;
+  color: rgb(0, 0, 0);
+}
+.card-body {
+  opacity: 0.8;
+  font-family: "Roboto", sans-serif;
+}
+.card:hover ~ .card {
+  transform: scale(0.95);
+  opacity: 0.8;
+}
+
+/* card */
+body {
+  background: linear-gradient(to top, #7844e9cb, #000000);
+}
+.info {
+  font-family: "Fredoka", sans-serif;
+  color: white;
+}
+img {
+  transition: transform 500ms ease;
+}
+
+.img1 {
+  width: 80px;
+  height: 170px;
+  position: relative;
+  opacity: 0;
+  top: 5px;
+  left: 0;
+  transition: opacity 1000ms ease;
+  transition: transform 1000ms ease;
+}
+.img2 {
+  width: 80px;
+  height: 170px;
+  position: relative;
+  opacity: 0;
+  top: 5px;
+  left: 0;
+
+  transition: opacity 1000ms ease;
+  transition: transform 1000ms ease;
+}
+.myname {
+  font-size: 30px;
+  font-family: "Montserrat", sans-serif;
+  color: rgb(195, 255, 255);
+  transition: transform 1000ms ease;
+}
+/* nav { 
+  z-index: 2;
+  position: fixed;
+ } */
+
+.instagram {
+  text-align: center;
+  padding-top: 50px;
+  font-family: "Roboto", sans-serif;
+  font-size: 15px;
+  color: violet;
+  margin-bottom: 10px;
+}
+.twitter {
+  text-align: center;
+  font-family: "Fredoka", sans-serif;
+  font-size: 15px;
+  color: black;
+}
+.email {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(9, 171, 211);
+}
+.discord {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(255, 255, 255);
+}
+.github {
+  text-align: center;
+  font-size: 15px;
+  color: rgb(88, 88, 88);
+}
+.intro {
+  background-color: rgba(0, 0, 0, 0.555);
+  margin: -8px;
+  text-align: center;
+}
+
+.intorcenter {
+  display: grid;
+}
+.introcenter2 {
+  display: inline-flex;
+  margin-top: 30px;
+}
+.myname {
+  transform: translateY(50%);
+  text-align: center;
+  opacity: 0;
+  transition: opacity 1000ms ease;
+  transition: transform 1000ms ease;
+}
+.bibikamakbara {
+  width: 9.6em;
+  height: 9em;
+  margin-top: 30px;
+  opacity: 1;
+}
+.intro:hover .bibikamakbara {
+  transform: scale(1.1);
+}
+
+@media (hover) {
+  .intro:hover .myname {
+    transform: translateY(0);
+    opacity: 1;
+    transition: transform 500ms ease;
+  }
+  .instagram:hover .instext {
+    color: rgb(177, 171, 171);
+    transition: color 500ms ease;
+  }
+  .twitter:hover .twittertext {
+    color: rgb(46, 219, 241);
+    transition: color 500ms ease;
+  }
+  .email:hover .emailtext {
+    color: rgb(233, 93, 93);
+    transition: color 500ms ease;
+  }
+  .discord:hover .discordtext {
+    color: black;
+    transition: color 500ms ease;
+  }
+  .github:hover .githubtext {
+    color: rgb(229, 235, 195);
+    transition: color 500ms ease;
+  }
+  .intro:hover .img1 {
+    transform: scale(1.2);
+    opacity: 1;
+    transition: transform 1000ms ease;
+  }
+  .intro:hover .img2 {
+    transform: scale(1.2);
+    opacity: 1;
+    transition: transform 1000ms ease;
+  }
+  img:hover {
+    transform: scale(1.2);
+  }
+}
